@@ -23,7 +23,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="Keira Castrellon" content="">
+    <meta name="Gerardo Aguilar" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -51,8 +51,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 838 1621</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> keira.kastrellonr@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 618 1200 776</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> atencionclientes@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -182,36 +182,34 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</h2>
 						<?php
-                         for ($i=0; $i< $iProductos;$i++){      
+                          for ($i=0; $i< $iProductos;$i++){      
                           ?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<?php
-											$img=$BDProductos[0][$i];
-											?>
-											<img src="images/home/"<? echo $img;
-											?> jpg "alt="" whith="210" height="180
-											"/>
-
-											<h2>
-												<?php echo "$".$BDProductos[2][$i];?>
-											<h2>
-											<p><?php echo "$" . $BDProductos[1][$i];?>
+                                              $img src=images/home/<?php echo $img;?>
+                                               "jpg" alt="" width="210" height="180"/>
+                                                 <h2>
+                                                 <?php echo "$". $BDProductos[2][$i]; ?>
+                                                 </h2>
+                                                  <p><?php echo $BDProductos[1][$i]; ?>
+                                                 </p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2><?php echo "$" . $BDProductos[2][$i];?><h2>
-													<p><?php echo "$" . $BDProductos [1][$i];?></p>
+												<h2><?php echo "$" . $BDProductos[2][$i]; ?></h2>
+                                                 <p><?php echo $BDProductos[1][$i]; ?></p>
+
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
-						
+					<?php }?>
 					</div><!--features_items-->
 					
 					
