@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <?php
   $BDProductos = array( 
-    array(1, 2, 3, 4, 5),                                       //El ID
-    array("Blusa", "Lentes", "Playera", "Pantalón", "Vestido"), //La Descripción
-    array(100, 350, 200, 420, 250),                             //El Precio
-    array("Dama", "Caballero", "Caballero", "Dama", "Dama"));   //Categoría
-  $iProductos = 5; //Indica el No. de Productos
+    array(1, 2, 3, 4, 5, 6, 7),                                       //El ID
+    array("Blusa", "Lentes", "Playera", "Pantalón", "Vestido", "Gabardina", "Camisa"), //La Descripción
+    array(100, 350, 200, 420, 250, 550, 620),                             //El Precio
+    array("Dama", "Caballero", "Caballero", "Dama", "Dama", "Caballero", "Caballero"));   //Categoría
+  $iProductos = 7; //Indica el No. de Productos
 
   $BDAlmacen = array( 
-    array(1, 2, 3, 4, 5), //El IDProducto
-    array(0,10, 5,15, 3)); //Las Existencias
+    array(1, 2, 3, 4, 5, 6, 7), //El IDProducto
+    array(0,10, 5, 15, 3, 2, 6)); //Las Existencias
 
   $iAlmacen = 2; //El No. de existencias
   $BDVentas = array(
@@ -18,12 +18,13 @@
     array(700, 200)); //El Monto
   $iVentas = 2; //El No. de ventas al momento
 ?>
+
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Software Punto de Venta" content="">
-    <meta name="Gerardo Aguilar" content="">
+    <meta name="Ander Campos" content="">
     <title>Inicio | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -51,7 +52,7 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +52 618 1200 776</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +52 618 120 0776</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> atencionclientes@gmail.com</a></li>
 							</ul>
 						</div>
@@ -166,8 +167,10 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Categoría 1</a></h4>
-								</div>
+										<h4 class="panel-title"><a href="#">Dama</a></h4>
+										<h4 class="panel-title"><a href="#">Caballeros</a></h4>
+										<h4 class="panel-title"><a href="#">Niños</a></h4>
+									</div>
 							</div>
 						</div><!--/category-products-->
 												
@@ -182,34 +185,36 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Catálogo de Productos</h2>
 						<?php
-                          for ($i=0; $i< $iProductos;$i++){      
-                          ?>
+   							for ($i=0; $i< $iProductos;$i++){      
+						?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<?php
-                                              $img src=images/home/<?php echo $img;?>
-                                               "jpg" alt="" width="210" height="180"/>
-                                                 <h2>
-                                                 <?php echo "$". $BDProductos[2][$i]; ?>
-                                                 </h2>
-                                                  <p><?php echo $BDProductos[1][$i]; ?>
-                                                 </p>
+											$img = $BDProductos[0][$i];
+											?>
+											<img src="images/home/<?php echo $img;?>
+											.jpg" alt="" width="210" height="180"/>
+											<h2>
+											<?php echo "$ " . $BDProductos[2][$i];?>
+											<h2>
+											<p><?php echo "$ " . $BDProductos[1][$i];?>
+											</p>
+
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<h2><?php echo "$" . $BDProductos[2][$i]; ?></h2>
-                                                 <p><?php echo $BDProductos[1][$i]; ?></p>
-
+												<h2><?php echo '$ ' . $BDProductos[2][$i];?></h2>
+												<p><?php echo  $BDProductos[1][$i];?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 											</div>
 										</div>
 								</div>								
 							</div>
 						</div>
-					<?php }?>
+						<?php }  ?>
 					</div><!--features_items-->
 					
 					
@@ -220,19 +225,62 @@
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
 								<div class="item active">	
-									<div class="col-sm-4">
+<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">
-													<img src="images/home/recommend1.jpg" alt="" />
-													<h2>$50</h2>
-													<p>Producto Esp 1</p>
+													<img src="images/home/lentes.jpg" alt="" />
+													<h2>$130</h2>
+													<p>Lentes de Sol</p>
 													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
 												</div>
 												
 											</div>
 										</div>
 									</div>
+
+<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/sombrero.jpg" alt="" />
+													<h2>$230</h2>
+													<p>Sombrero Fedora</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/bufanda.jpg" alt="" />
+													<h2>$90</h2>
+													<p>Bufanda</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
+<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/hoodie.jpg" alt="" />
+													<h2>$430</h2>
+													<p>Sudadera</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Agregar al Carrito</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+
 								</div>
 								
 							</div>
